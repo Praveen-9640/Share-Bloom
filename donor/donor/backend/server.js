@@ -13,9 +13,6 @@ import driveRoutes from './routes/drives.js';
 import requestRoutes from './routes/requests.js';
 import adminRoutes from './routes/admin.js';   // ✅ MOVE IMPORT HERE
 
-// Load environment variables
-dotenv.config({ path: './config.env' });
-
 const app = express();
 const PORT = process.env.PORT || 5001;
 
@@ -31,11 +28,16 @@ app.use(express.urlencoded({ extended: true }));
 // Static files
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+
+// Load environment variables
+dotenv.config();
+
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => console.log('Connected to MongoDB'))
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected successfully'))
   .catch((error) => console.error('MongoDB connection error:', error));
+
 
 // Routes
 app.use('/api/auth', authRoutes);
