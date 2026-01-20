@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { api } from '../utils/api';
+import api from "../utils/api";
 import { Users, Search, MapPin, Calendar, AlertCircle, Clock } from 'lucide-react';
 
 const Requests = () => {

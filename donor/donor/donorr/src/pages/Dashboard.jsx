@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { api } from '../utils/api';
+import api from "../utils/api";
 import { 
   Package, Users, Calendar, Plus, TrendingUp,
   Heart, Truck, AlertCircle

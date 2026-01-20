@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { api } from "../utils/api";
+import api from "../utils/api";
 import { FileText, Clock, Users, Package, Calendar, Loader2 } from "lucide-react";
 import {
   BarChart,

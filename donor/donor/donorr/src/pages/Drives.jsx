@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { api } from '../utils/api';
+import api from "../utils/api";
 import { Sparkles, Search, MapPin, UsersRound, Timer, AlertTriangle, TrendingUp, Filter, Check, X, Calendar, Info, Plus, Save, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { api } from '../utils/api';
+import api from "../utils/api";
 import { Package, Upload, MapPin, Calendar, CheckCircle, Locate, Loader2, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 
