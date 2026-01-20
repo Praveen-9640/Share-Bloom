@@ -1,14 +1,16 @@
 import axios from "axios";
+// IMPORTANT: Vercel exposes env vars only via import.meta.env
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const api = axios.create({
-  baseURL: "https://share-bloom-backend.onrender.com/api",
+  baseURL: API_BASE_URL,
+  withCredentials: true,
   headers: {
     "Content-Type": "application/json",
   },
-  withCredentials: false,
 });
 
-// Attach token automatically
+// Request interceptor
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
@@ -20,7 +22,7 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Handle auth errors
+// Response interceptor
 api.interceptors.response.use(
   (response) => response,
   (error) => {
